@@ -6,7 +6,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.EditText;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private Button button;
@@ -22,12 +21,10 @@ public class MainActivity extends AppCompatActivity {
         text_view = (TextView) findViewById(R.id.textView);
         edit_text = (EditText) findViewById(R.id.editText);
 
-        Work work = new Work(edit_text,text_view);
-
-        button.setOnClickListener(work);
+        button.setOnClickListener(new Work(edit_text,text_view));
 
         /*button.setOnClickListener((View v)->{
-          LAMBDA SI ANDROID SOPORTASE JAVA 8
+          //LAMBDA SI ANDROID SOPORTASE JAVA 8
         });*/
     }
 }

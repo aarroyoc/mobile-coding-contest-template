@@ -11,10 +11,11 @@ import android.os.AsyncTask;
  */
 
 public class Work extends AsyncTask<Void,Void,String> implements OnClickListener {
-    final private String input;
+    final private EditText inputE;
     final private TextView output;
+    private String input;
     public Work(EditText input, TextView output) {
-        this.input = input.getText().toString();
+        this.inputE = input;
         this.output = output;
     }
 
@@ -25,7 +26,7 @@ public class Work extends AsyncTask<Void,Void,String> implements OnClickListener
         }catch(InterruptedException e){
 
         }
-        return "TIMER AGOTADO";
+        return input;
     }
 
     @Override
@@ -35,6 +36,7 @@ public class Work extends AsyncTask<Void,Void,String> implements OnClickListener
 
     @Override
     public void onClick(View v){
+        input = this.inputE.getText().toString();
         this.execute();
     }
 }
